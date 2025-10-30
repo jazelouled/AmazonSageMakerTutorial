@@ -136,7 +136,7 @@ aws sagemaker delete-domain \
 
 ---
 
-
+```bash
 
 
 
