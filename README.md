@@ -49,7 +49,7 @@ aws iam attach-role-policy --role-name "$ROLE_NAME" --policy-arn arn:aws:iam::aw
 
 # Get Role ARN
 ROLE_ARN="arn:aws:iam::${ACCOUNT_ID}:role/${ROLE_NAME}"
-echo "✅ IAM Role ARN: $ROLE_ARN"
+echo "IAM Role ARN: $ROLE_ARN"
 
 # ===============================
 # STEP 4 — Create SageMaker Domain
