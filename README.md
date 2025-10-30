@@ -134,6 +134,12 @@ aws sagemaker delete-domain \
 
 
 
+---
+
+
+
+
+
 # Troubleshooting: installing "terra" in Sagemaker
 # 1. Remove old PROJ versions
 sudo apt-get remove -y libproj-dev proj-bin proj-data
@@ -158,6 +164,3 @@ proj
 # After this, 'terra' can be installed from source:
 # Rscript -e 'install.packages("terra", type = "source", repos = "https://cran.rstudio.com")'
 
-
-
----
