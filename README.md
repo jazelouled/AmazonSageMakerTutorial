@@ -218,3 +218,38 @@ sudo make install
 ls /usr/local/include/proj.h
 proj
 
+
+
+
+
+## SageMaker RStudio Pricing Summary
+
+RStudio on AWS SageMaker runs on **dedicated EC2 instances** that are billed by the hour.  
+You only pay while the RStudio server instance is **running**.
+
+### When You Are Charged
+You start being charged **as soon as RStudio launches** (when the IDE opens).  
+The billing continues **until you shut down the RStudio app** in the SageMaker console.  
+Deleting or stopping the domain or app immediately stops compute billing.
+
+### Instance Options and Approximate Pricing (us-east-1)
+| Instance Type | vCPUs | Memory (GB) | Approx. Cost per Hour | Typical Use |
+|---------------|--------|--------------|------------------------|--------------|
+| `ml.t3.medium` | 2 | 4 | ~$0.05 | Small testing, light tasks |
+| `ml.c5.4xlarge` | 16 | 32 | ~$0.68 | Moderate computation, model fitting |
+| `ml.c5.9xlarge` | 36 | 72 | ~$1.53 | Heavy workloads, training large models |
+
+> You are billed 24/7 if the RStudio app is left open.  
+> Always stop the RStudio app when not in use to avoid unnecessary charges.
+
+### Additional (Minor) Costs
+- **EFS storage**: a few cents per GB/month for user home directories.  
+- **S3 storage**: for any uploaded or output data.  
+- **License**: RStudio (Posit) Pro license provided via **AWS License Manager**. If you’re using the free POSIT academic license, you’ll see a time-limited activation message.
+
+### Example Calculation
+If you use an `ml.c5.4xlarge` for 4 hours:
+```bash
+4 hours × $0.68/hour = $2.72
+
+
