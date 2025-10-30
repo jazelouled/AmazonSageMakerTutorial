@@ -142,9 +142,11 @@ To connect your SageMaker RStudio environment to GitHub securely, follow these s
 ssh-keygen -t ed25519 -C "jazelouled-cheikhbonan@sagemaker"
 ```
 
-# Press Enter to save in the default location:
+Press Enter to save in the default location:
+```bash
 # /home/sagemaker-user/.ssh/id_ed25519
-# You can leave the passphrase empty if preferred.
+```
+You can leave the passphrase empty if preferred.
 
 # 2. Display the public key
 ```bash
