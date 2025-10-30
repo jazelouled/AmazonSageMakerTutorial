@@ -136,11 +136,16 @@ aws sagemaker delete-domain \
 
 ---
 
+---
+
+## Troubleshooting: installing "terra" in SageMaker
+
+If you get the error  
+`fatal error: proj.h: No such file or directory`  
+while installing `terra`, it means PROJ headers are missing.  
+Run the following commands in your terminal:
+
 ```bash
-
-
-
-# Troubleshooting: installing "terra" in Sagemaker
 # 1. Remove old PROJ versions
 sudo apt-get remove -y libproj-dev proj-bin proj-data
 
@@ -160,7 +165,3 @@ sudo make install
 # 4. Verify that proj.h now exists
 ls /usr/local/include/proj.h
 proj
-
-# After this, 'terra' can be installed from source:
-# Rscript -e 'install.packages("terra", type = "source", repos = "https://cran.rstudio.com")'
-
