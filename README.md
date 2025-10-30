@@ -137,7 +137,7 @@ aws sagemaker delete-domain \
 ## Connecting SageMaker to GitHub via SSH
 To connect your SageMaker RStudio environment to GitHub securely, follow these steps.
 
-1. Generate a new SSH key inside SageMaker
+**1. Generate a new SSH key inside SageMaker**
 ```bash
 ssh-keygen -t ed25519 -C "jazelouled-cheikhbonan@sagemaker"
 ```
@@ -148,7 +148,7 @@ Press Enter to save in the default location:
 ```
 You can leave the passphrase empty if preferred.
 
-2. Display the public key
+**2. Display the public key**
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
@@ -156,14 +156,14 @@ cat ~/.ssh/id_ed25519.pub
 
 Copy the entire key that starts with ssh-ed25519.
 
-3. Add the key to GitHub
+**3. Add the key to GitHub**
 	1.	Go to GitHub → Settings → SSH and GPG keys → New SSH key
 	2.	Title: SageMaker
 	3.	Paste the public key you copied
 	4.	Click Add SSH key
 	
 	
-4. Test the connection
+**4. Test the connection**
 Run this command in your SageMaker terminal to verify that everything works:
 
 ```bash
@@ -175,7 +175,7 @@ Expected output:
 ```bash
 Hi jazelouled! You've successfully authenticated, but GitHub does not provide shell access.
 ```
-5. Clone or push to a repository using SSH
+**5. Clone or push to a repository using SSH**
 ```bash
 # Clone your repository
 git clone git@github.com:jazelouled/AmazonSageMakerTutorial.git
