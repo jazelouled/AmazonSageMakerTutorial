@@ -131,12 +131,8 @@ aws sagemaker delete-domain \
   --domain-id <DOMAIN_ID> \
   --retain-deployment-data false \
   --retention-policy HomeEfsFileSystem=Delete
+```
 
-
-
----
-
----
 
 ## Troubleshooting: installing "terra" in SageMaker
 
@@ -165,3 +161,4 @@ sudo make install
 # 4. Verify that proj.h now exists
 ls /usr/local/include/proj.h
 proj
+
