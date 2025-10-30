@@ -2,8 +2,9 @@
 
 # Full AWS SageMaker RStudio Setup Protocol
 
-This markdown provides the complete reproducible sequence — from login to launching RStudio — all in a single script format for AWS CloudShell.
+This markdown provides the complete reproducible sequence, from login to launching RStudio. All in a single script format for AWS CloudShell.The domain creation part can be done from AWS click by click, and then I recommend doing the R-enabling part by following the steps here. Before starting this, make sure to have a valid RStudio license, which is provided by POSIT via SUGER. It can take from 24 to 48 hours and they notify you by email. 
 
+![SageMaker Domain Example](images/workflow.png)
 ---
 
 ```bash
