@@ -157,11 +157,11 @@ cat ~/.ssh/id_ed25519.pub
 Copy the entire key that starts with ssh-ed25519.
 
 **3. Add the key to GitHub**
-	1.	Go to GitHub → Settings → SSH and GPG keys → New SSH key
-	2.	Title: SageMaker
-	3.	Paste the public key you copied
-	4.	Click Add SSH key
-	
+
+I. Go to **GitHub → Settings → SSH and GPG keys → New SSH key**  
+II. Set the title to **SageMaker**  
+III. Paste the **public key** you copied  
+IV. Click **Add SSH key**
 	
 **4. Test the connection**
 Run this command in your SageMaker terminal to verify that everything works:
