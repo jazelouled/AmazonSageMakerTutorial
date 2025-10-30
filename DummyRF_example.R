@@ -27,12 +27,12 @@ data <- data.frame(x, y, env1, env2, presence)
 
 # --- Save input data ---
 write.csv(data, file.path(input_dir, "simulated_data.csv"), row.names = FALSE)
-message("✅ Input data saved to ", input_dir)
+message("Input data saved to ", input_dir)
 
 # --- Fit Random Forest model ---
 rf_model <- randomForest(factor(presence) ~ env1 + env2 + x + y, data = data, ntree = 200)
 saveRDS(rf_model, file.path(output_dir, "rf_model.rds"))
-message("✅ Random Forest model saved to ", output_dir)
+message("Random Forest model saved to ", output_dir)
 
 # --- Generate prediction grid ---
 grid_res <- 0.5
@@ -46,10 +46,10 @@ grid$env2 <- rnorm(nrow(grid), mean = 3, sd = 1.5)
 grid$pred <- predict(rf_model, newdata = grid, type = "prob")[, 2]
 r <- rasterFromXYZ(grid[, c("x", "y", "pred")])
 writeRaster(r, file.path(output_dir, "rf_prediction.tif"), overwrite = TRUE)
-message("✅ Prediction raster saved to ", output_dir)
+message("Prediction raster saved to ", output_dir)
 
 # --- Plot ---
 plot(r, main = "Random Forest Predictions (Dummy Data)")
 points(data$x, data$y, col = ifelse(data$presence == 1, "red", "blue"), pch = 20)
 
-cat("\n🎉 Done! All outputs stored inside DummyProject/00output.\n")
+cat("\nDone! All outputs stored inside DummyProject/00output.\n")

@@ -137,8 +137,7 @@ aws sagemaker delete-domain \
 ## Troubleshooting: installing "terra" in SageMaker
 
 If you get the error  
-`fatal error: proj.h: No such file or directory`  
-while installing `terra`, it means PROJ headers are missing.  
+`fatal error: proj.h: No such file or directory` while installing `terra`, it means PROJ headers are missing.  
 Run the following commands in your terminal:
 
 ```bash
