@@ -170,9 +170,19 @@ Expected output:
 ```bash
 Hi jazelouled! You've successfully authenticated, but GitHub does not provide shell access.
 ```
+5. Clone or push to a repository using SSH
+```bash
+# Clone your repository
+git clone git@github.com:jazelouled/AmazonSageMakerTutorial.git
 
+# Move into the repo
+cd AmazonSageMakerTutorial
 
-
+# Commit and push changes
+git add .
+git commit -m "update README with SSH setup"
+git push origin main
+```
 
 
 
