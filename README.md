@@ -131,3 +131,33 @@ aws sagemaker delete-domain \
   --domain-id <DOMAIN_ID> \
   --retain-deployment-data false \
   --retention-policy HomeEfsFileSystem=Delete
+
+
+
+# Troubleshooting: installing "terra" in Sagemaker
+# 1. Remove old PROJ versions
+sudo apt-get remove -y libproj-dev proj-bin proj-data
+
+# 2. Install dependencies for building from source
+sudo apt-get update -y
+sudo apt-get install -y build-essential cmake sqlite3 libsqlite3-dev curl
+
+# 3. Download and install PROJ (modern version, with proj.h)
+cd /tmp
+wget https://download.osgeo.org/proj/proj-9.1.0.tar.gz
+tar -xzf proj-9.1.0.tar.gz
+cd proj-9.1.0
+mkdir build && cd build
+cmake .. && make -j$(nproc)
+sudo make install
+
+# 4. Verify that proj.h now exists
+ls /usr/local/include/proj.h
+proj
+
+# After this, 'terra' can be installed from source:
+# Rscript -e 'install.packages("terra", type = "source", repos = "https://cran.rstudio.com")'
+
+
+
+---
