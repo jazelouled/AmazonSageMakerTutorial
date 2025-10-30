@@ -153,7 +153,7 @@ You can leave the passphrase empty if preferred.
 cat ~/.ssh/id_ed25519.pub
 ```
 
-```
+
 Copy the entire key that starts with ssh-ed25519.
 
 3. Add the key to GitHub
